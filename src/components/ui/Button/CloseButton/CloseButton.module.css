@@ -1,0 +1,22 @@
+.closeButton {
+    position: absolute;
+    z-index: 999;
+    top: 89px;
+    left: 11px;
+    cursor: pointer;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transform: rotate(270deg) translate3d(0px, 0px, 0px);
+    background: none;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    padding: 0;
+
+    &:hover {
+        color: rgb(164, 157, 143);
+    }
+}

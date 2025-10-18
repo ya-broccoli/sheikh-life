@@ -1,0 +1,277 @@
+.containerHeader {
+    height: 22vh;
+    align-items: center;
+    background: rgb(255, 255, 255);
+}
+
+.containerHeader {
+    width: calc(60px + 80vw);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.contacts,
+.logoContainer,
+.socials {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    height: 48px;
+}
+
+.span2:last-child .heading1,
+.span2:last-child .heading2 {
+    text-align: right;
+}
+
+.languageSelect {
+    padding-top: 2px;
+}
+
+.heading1 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.heading2 {
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.socials .heading1,
+.socials .heading2 {
+    text-align: right;
+}
+
+.callback {
+    cursor: pointer;
+    padding: 0;
+    border-style: none none solid;
+    border-image: initial;
+    background: none;
+    border-bottom: 1px solid rgb(232, 227, 218);
+    font-size: 13px;
+
+    &:hover {
+        color: rgb(164, 157, 143);
+    }
+}
+
+.containerBanner {
+    height: 56vh;
+    background: url('/images/backImage.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.containerBanner .banner {
+    height: 100%;
+}
+
+.banner {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.heroDescription {
+    display: flex;
+    flex-direction: column;
+    padding: 48px 0 32px;
+    width: 66.66%;
+}
+
+.title {
+    font-size: 60px;
+    line-height: 70px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 400;
+
+    & span {
+        color: #000;
+    }
+}
+
+.description {
+    position: relative;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: auto;
+
+    &:before {
+        position: absolute;
+        content: '';
+        width: 48px;
+        height: 2px;
+        left: 0;
+        top: -24px;
+        background: rgb(248, 248, 248);
+    }
+}
+
+.counter {
+    font-size: 240px;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    line-height: 240px;
+    position: absolute;
+    right: -128px;
+    top: 50px;
+    text-align: right;
+}
+
+.videoContainer {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    position: relative;
+    overflow: visible;
+}
+
+.videoThumb {
+    background-color: #fff;
+}
+
+.video {
+    position: relative;
+    height: calc(13.33vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.videoButton {
+    cursor: pointer;
+    width: 68px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.videoDescription {
+    padding: 33px 42px;
+
+    & p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    & button {
+        font-size: 13px;
+        line-height: 20px;
+        background: none;
+        padding: 10px 0 0 0;
+        border: none;
+        cursor: pointer;
+        border-bottom: 2px solid rgb(232, 227, 218);
+
+        &:hover {
+            color: rgb(164, 157, 143);
+        }
+    }
+}
+
+.containerFooter {
+    display: flex;
+    height: 22vh;
+    align-items: center;
+    width: calc(60px + 80vw);
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.slider {
+    margin-top: -120px;
+    height: 100%;
+}
+
+.swiperSlide {
+    text-align: center;
+}
+
+.slideImage {
+    border: 20px solid #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.buttonIcon {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.application,
+.slider,
+.programs {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+}
+
+.application,
+.programs {
+    padding: 0 30px;
+}
+
+.applicationButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    background: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 16px 24px;
+    border: none;
+}
+
+.buttonIcon {
+    flex-shrink: 0;
+}
+
+.programsLink {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    background: rgb(232, 227, 218);
+    text-decoration: none;
+    padding: 16px 0;
+}
+
+.applicationButton,
+.programsLink {
+    &:hover {
+        background-color: #a49d8f;
+    }
+}

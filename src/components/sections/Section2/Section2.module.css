@@ -1,0 +1,125 @@
+.section {
+    position: relative;
+    max-width: 1160px;
+    margin: auto;
+    padding: 100px 0;
+}
+
+.title {
+    font-size: 46px;
+    line-height: 55px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 40px;
+    font-family: Prata, Arial, sans-serif;
+}
+
+.counter {
+    position: absolute;
+    font-size: 155px;
+    line-height: 119.5%;
+    color: rgb(232, 227, 218);
+    right: 284px;
+    top: 60px;
+    z-index: -1;
+}
+
+.worksList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style-type: none;
+    gap: 40px;
+}
+
+.worksItem {
+    position: relative;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    overflow: hidden;
+    filter: brightness(0.7);
+
+    &:hover {
+        filter: brightness(1);
+    }
+}
+
+.image {
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.workTitle {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 119.5%;
+    max-width: 205px;
+    text-transform: uppercase;
+    font-family: Montserrat, Arial, sans-serif;
+    position: relative;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease 0.6s;
+}
+
+.workItemInner {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    bottom: 140px;
+}
+
+.worksItem:hover .workTitle {
+    transform: translateY(-20px);
+    transition: transform 0.3s ease 0s;
+}
+
+.worksItem:hover .workItemInner {
+    opacity: 1;
+    transition: opacity 0.4s ease 0.1s;
+}
+
+.workItemDescription {
+    font-family: Montserrat, Arial, sans-serif;
+    position: relative;
+    font-size: 12px;
+    line-height: 119.5%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    max-width: 225px;
+    margin-bottom: 15px;
+
+    &:before {
+        content: "";
+        display: block;
+        /*margin: auto;*/
+        margin-bottom: 15px;
+        width: 180px;
+        height: 1px;
+        background-color: #fff;
+    }
+}
+
+.workItemBtn {
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 12px;
+    line-height: 119.5%;
+    position: relative;
+    color: rgb(255, 255, 255);
+    padding-bottom: 2px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: border 0.3s;
+}
+
+.workItemBtn:hover {
+    border-bottom: 1px solid #fff;
+}

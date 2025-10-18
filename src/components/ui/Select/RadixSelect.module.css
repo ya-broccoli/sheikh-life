@@ -1,0 +1,38 @@
+.selectTrigger {
+  font-family: Prata, Arial, sans-serif;
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-size: 13px;
+  line-height: 1;
+  width: 210px;   
+  height: 36px;
+  gap: 5px;
+}
+
+.viewport {
+  padding: 6px;
+  margin-left: -12px;
+}
+
+.item {
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 25px;
+  padding: 0 35px 0 25px;
+  position: relative;
+  user-select: none;
+}
+
+.placeholderLabel {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; 
+}

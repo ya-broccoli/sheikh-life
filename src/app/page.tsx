@@ -1,95 +1,75 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+import s from './page.module.css'
+import {useState} from 'react';
+import {Section1} from '@/components/sections/Section1/Section1';
+import {Section2} from '@/components/sections/Section2/Section2';
+import {Section3} from '@/components/sections/Section3/Section3';
+import {Section4} from '@/components/sections/Section4/Section4';
+import {Section5} from '@/components/sections/Section5/Section5';
+import {Section6} from '@/components/sections/Section6/Section6';
+import {Section7} from '@/components/sections/Section7/Section7';
+import {Section8} from '@/components/sections/Section8/Section8';
+import {Section9} from '@/components/sections/Section9/Section9';
+import {Section10} from '@/components/sections/Section10/Section10';
+import {ContactForm} from '@/components/layout/ContactForm/ContactForm';
+import {InfoModal} from '@/components/layout/InfoModal/InfoModal';
+import {servicesData} from '@/data/servicesData';
+import {casesData} from '@/data/casesData';
+import {About} from '@/components/layout/About/About';
+import {UserAgreement} from '@/components/layout/UserAgreement/UserAgreement';
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+export default function Page() {
+    const [isFormOpen, setIsFormOpen] = useState(false)
+    const [isAboutOpen, setAboutOpen] = useState(false)
+    const [isUserAgreementOpen, setUserAgreementOpen] = useState(false)
+    const [activeModal, setActiveModal] = useState<{
+        type: 'service' | 'case'
+        initialSlide: number
+    } | null>(null)
+
+    const modalSlides = activeModal?.type === 'case'
+        ? casesData.map(caseItem => ({
+            id: caseItem.id,
+            content: caseItem.content
+        }))
+        : servicesData.map(service => ({
+            id: service.id,
+            content: service.content
+        }))
+
+    // Функция для нахождения индекса услуги по ID
+    const findServiceIndex = (serviceId: number) => {
+        return servicesData.findIndex(service => service.id === serviceId);
+    }
+
+    return (
+        <div className={s.page}>
+            <main className={s.main}>
+                <Section1 onOpenForm={() => setIsFormOpen(true)} />
+                <Section2 onOpenCase={(initialSlide) => setActiveModal({ type: 'case', initialSlide })} />
+                <Section3 onOpenService={(serviceId) => setActiveModal({ type: 'service', initialSlide: findServiceIndex(serviceId) })} />
+                <Section4 onOpenForm={() => setIsFormOpen(true)} />
+                <Section5 onOpenForm={() => setIsFormOpen(true)} />
+                <Section6 onOpenUserAgreement={() => setUserAgreementOpen(true)} />
+                <Section7 onOpenAbout={() => setAboutOpen(true)} />
+                <Section8 />
+                <Section9 />
+                <Section10 onOpenUserAgreement={() => setUserAgreementOpen(true)} />
+            </main>
+
+            <ContactForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} />
+            <About isOpen={isAboutOpen} onClose={() => setAboutOpen(false)} />
+            <UserAgreement isOpen={isUserAgreementOpen} onClose={() => setUserAgreementOpen(false)} />
+
+            <InfoModal
+                key={activeModal?.initialSlide}
+                isOpen={activeModal !== null}
+                onClose={() => setActiveModal(null)}
+                slides={modalSlides}
+                initialSlide={activeModal?.initialSlide || 0}
+                onOpenForm={() => setIsFormOpen(true)}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    )
 }

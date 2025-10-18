@@ -1,0 +1,50 @@
+.Root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff;
+  color: #000;
+  outline: none;
+}
+
+.List {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  outline: none;
+}
+
+.Trigger {
+  all: unset;
+  font-family: inherit;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  margin: 0 24px;
+
+  &:hover {
+    color: rgb(164, 157, 143);
+  }
+
+  &[data-state='active'] {
+    &:after {
+      content: '';
+      height: 8px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 8px;
+      background: rgb(232, 227, 218);
+    }
+  }
+}

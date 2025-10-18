@@ -1,0 +1,27 @@
+.languageButtons {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+  font-family: Prata, Arial, sans-serif;
+}
+
+.langButton {
+  font-size: 15px;
+  padding: 10px;
+  color: rgb(68, 68, 68);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  font-family: Prata, Arial, sans-serif;
+}
+
+.langButton:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(238, 238, 238);
+}
+
+.langButton.active {
+  color: rgb(0, 0, 0);
+  background-color: rgb(238, 238, 238);
+}
