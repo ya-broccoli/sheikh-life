@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    output: 'export',
     reactStrictMode: true,
     images: {
-        unoptimized: true, // если используем url() в CSS или прямые ссылки на картинки
+        unoptimized: true,
     },
+    trailingSlash: true,
 };
 
 export default nextConfig;
