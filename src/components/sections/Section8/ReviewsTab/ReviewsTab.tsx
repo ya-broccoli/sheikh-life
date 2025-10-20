@@ -60,6 +60,16 @@ export const ReviewsTab = () => {
                     spaceBetween={20}
                     slidesPerView={3}
                     loop={true}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                            spaceBetween: 10
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 20
+                        }
+                    }}
                     className={s.swiper}
                 >
                     {reviews.map((review) => (

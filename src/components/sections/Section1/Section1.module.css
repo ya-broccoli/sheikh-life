@@ -1,35 +1,80 @@
-.containerHeader {
+.header {
     height: 22vh;
     align-items: center;
     background: rgb(255, 255, 255);
-}
-
-.containerHeader {
     width: calc(60px + 80vw);
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0 auto;
+
+    @media (max-width: 1024px) {
+        height: 22vh;
+        background: #fff;
+        align-items: center;
+        width: 100%;
+        padding-left: 32px;
+        padding-right: 32px;
+        justify-content: center;
+    }
+
+    @media (max-width: 767px) {
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 15vh;
+    }
 }
 
-.contacts,
-.logoContainer,
+.contacts {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
+}
+
 .socials {
     flex-basis: 33.33%;
     max-width: 33.33%;
     padding-left: 30px;
     padding-right: 30px;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .logoContainer {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+    padding-left: 30px;
+    padding-right: 30px;
     display: flex;
     flex-direction: column;
     text-align: center;
     margin-bottom: 25px;
+
+    @media (max-width: 1023px) {
+        flex-basis: 50%;
+        max-width: 50%;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 767px) {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
 }
 
 .logo {
     height: 48px;
+
+    @media (max-width: 767px) {
+        height: 40px;
+    }
 }
 
 .span2:last-child .heading1,
@@ -74,6 +119,13 @@
     height: 56vh;
     background: url('/images/backImage.jpg') center no-repeat;
     background-size: cover;
+
+    @media (max-width: 1023px) {
+        height: 45.6vh;
+        padding-top: 32px;
+        background: url('/images/backImage.jpg') 35% 50% no-repeat;
+        background-size: cover;
+    }
 }
 
 .containerBanner .banner {
@@ -84,6 +136,16 @@
     width: 90%;
     margin: 0 auto;
     display: flex;
+
+    @media (max-width: 1023px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding-left: 32px;
+        padding-right: 32px;
+        height: 100%;
+    }
 }
 
 .heroDescription {
@@ -91,6 +153,14 @@
     flex-direction: column;
     padding: 48px 0 32px;
     width: 66.66%;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        padding: 0;
+        margin-top: auto;
+        text-align: left;
+        justify-content: flex-start;
+    }
 }
 
 .title {
@@ -102,6 +172,16 @@
 
     & span {
         color: #000;
+    }
+
+    @media (max-width: 1279px) {
+        font-size: 50px;
+    }
+
+    @media (max-width: 1023px) {
+        font-size: 26px;
+        line-height: 32px;
+        margin-top: 0;
     }
 }
 
@@ -121,6 +201,10 @@
         top: -24px;
         background: rgb(248, 248, 248);
     }
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .counter {
@@ -132,6 +216,10 @@
     right: -128px;
     top: 50px;
     text-align: right;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .videoContainer {
@@ -144,10 +232,24 @@
     height: 100%;
     position: relative;
     overflow: visible;
+
+    @media (max-width: 1023px) {
+        flex-basis: 50%;
+        max-width: 50%;
+        width: 100%;
+        padding: 0;
+        align-self: flex-start;
+    }
 }
 
 .videoThumb {
     background-color: #fff;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        margin: 0;
+        height: auto;
+    }
 }
 
 .video {
@@ -156,6 +258,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1023px) {
+        height: 106px;
+    }
 }
 
 .videoButton {
@@ -166,25 +272,58 @@
 }
 
 .videoDescription {
+    position: relative;
     padding: 33px 42px;
 
-    & p {
-        font-size: 20px;
-        line-height: 28px;
+    @media (max-width: 1023px) {
+        padding: 3px 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 66px;
+        background-color: #fff;
+        z-index: 10;
+
+        &:before {
+            position: absolute;
+            content: '';
+            display: block;
+            background: #fff;
+            left: -32px;
+            top: 0;
+            bottom: 0;
+            width: 32px;
+            height: 107px;
+        }
+    }
+}
+
+.videoTitle {
+    font-size: 20px;
+    line-height: 28px;
+
+    @media (max-width: 1023px) {
+        font-size: 12px;
+        line-height: 18px;
+
+    }
+}
+
+.playButton {
+    font-size: 13px;
+    line-height: 20px;
+    background: none;
+    padding: 10px 0 0 0;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid rgb(232, 227, 218);
+
+    &:hover {
+        color: rgb(164, 157, 143);
     }
 
-    & button {
-        font-size: 13px;
-        line-height: 20px;
-        background: none;
-        padding: 10px 0 0 0;
-        border: none;
-        cursor: pointer;
-        border-bottom: 2px solid rgb(232, 227, 218);
-
-        &:hover {
-            color: rgb(164, 157, 143);
-        }
+    @media (max-width: 1023px) {
+        display: none;
     }
 }
 
@@ -196,11 +335,34 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0 auto;
+
+    @media (max-width: 1023px) {
+        font-size: 12px;
+        line-height: 18px;
+        padding: 16px 32px 0 32px;
+        width: 100%;
+        height: fit-content;
+    }
+}
+
+.footerDescription {
+    display: none;
+
+    @media (max-width: 1023px) {
+        display: block;
+        margin-bottom: 24px;
+        font-size: 12px;
+        margin-right: auto;
+    }
 }
 
 .slider {
     margin-top: -120px;
     height: 100%;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .swiperSlide {
@@ -224,11 +386,21 @@
 .programs {
     flex-basis: 33.33%;
     max-width: 33.33%;
+
+    @media (max-width: 1023px) {
+        flex-basis: 100%;
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .application,
 .programs {
     padding: 0 30px;
+
+    @media (max-width: 1023px) {
+        padding: 0;
+    }
 }
 
 .applicationButton {
@@ -236,7 +408,6 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 1px;
@@ -248,6 +419,11 @@
     text-decoration: none;
     padding: 16px 24px;
     border: none;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
 
 .buttonIcon {
@@ -267,6 +443,10 @@
     background: rgb(232, 227, 218);
     text-decoration: none;
     padding: 16px 0;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+    }
 }
 
 .applicationButton,

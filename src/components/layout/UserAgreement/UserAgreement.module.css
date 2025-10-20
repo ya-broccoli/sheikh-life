@@ -23,17 +23,32 @@
     margin: 0 auto;
     flex: 0 1 auto;
     padding: 100px 0;
+
+    @media (max-width: 1023px) {
+        padding: 0 32px;
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 .emptyBlock {
     flex-basis: 16.67%;
     max-width: 16.67%;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .block {
     flex-basis: 66.67%;
     max-width: 66.67%;
     padding: 0 30px;
+
+    @media (max-width: 1023px) {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
 }
 
 .titleWrapper {
@@ -41,6 +56,10 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 64px;
+
+    @media (max-width: 1023px) {
+        margin: 0;
+    }
 }
 
 .title {
@@ -48,9 +67,20 @@
     line-height: 36px;
     flex: 1;
     margin-right: 30px;
+
+    @media (max-width: 1023px) {
+        margin: 80px 0 32px;
+        font-size: 24px;
+        line-height: 28px;
+    }
 }
 
 .description {
     line-height: 1.6;
     font-size: 16px;
+
+    @media (max-width: 1023px) {
+        margin-bottom: 32px;
+        font-size: 13px;
+    }
 }

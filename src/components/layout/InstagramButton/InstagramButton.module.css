@@ -25,4 +25,8 @@
     &:hover {
         color: rgb(164, 157, 143);
     }
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }

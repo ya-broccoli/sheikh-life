@@ -20,7 +20,7 @@ export const Case1 = ({onOpenForm}: Props) => {
                 <div className={s.videoThumb}>
                     <YouTubeVideo title={'День с подписчиком в Дубае'} videoId={'XM8c8xqrzlE'} />
                 </div>
-                <p>
+                <p className={s.description}>
                     Однажды к нам обратился Гусейн Гасанов. Он хотел сделать сюрприз для своего подписчика и устроить ему незабываемый день в Дубае.<br/>
                     Гусейн обратился к нам накануне ночью и попросил сделать что-нибудь сочное и интересное.<br/>
                     <br/>

@@ -1,14 +1,10 @@
 .section {
     position: relative;
     padding: 100px 0;
-}
 
-.titleContainer {
-    width: calc(60px + 80vw);
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin: 0 auto;
+    @media (max-width: 1023px) {
+        padding: 25px 0;
+    }
 }
 
 .container {
@@ -18,6 +14,13 @@
     flex: 0 1 auto;
     flex-wrap: wrap;
     flex-direction: row;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        padding: 0 32px;
+        margin: 0;
+        flex-direction: column;
+    }
 }
 
 .block1 {
@@ -27,9 +30,17 @@
 }
 
 .block2 {
+    position: relative;
     flex-basis: 33.33%;
     max-width: 33.33%;
     padding: 0 30px;
+
+    @media (max-width: 1023px) {
+        flex-basis: 100%;
+        max-width: 100%;
+        overflow: visible;
+        padding: 0;
+    }
 }
 
 .counter {
@@ -39,14 +50,24 @@
     line-height: 160px;
     top: 30px;
     left: -30px;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .title {
     width: 100%;
     font-size: 48px;
     line-height: 54px;
-    margin-bottom: 80px;
+    margin-bottom: 120px;
     text-align: center;
+
+    @media (max-width: 1023px) {
+        margin: 48px 0;
+        font-size: 24px;
+        line-height: 28px;
+    }
 }
 
 .applicationButton {
@@ -68,8 +89,18 @@
     padding: 18px 10px;
     border: none;
 
+
     &:hover {
         background-color: #a49d8f;
+    }
+
+    @media (max-width: 1023px) {
+        min-width: 100%;
+        font-size: 12px;
+        letter-spacing: 2px;
+        line-height: 18px;
+        padding: 11px 10px;
+        margin-top: 50px;
     }
 }
 
@@ -87,6 +118,16 @@
     justify-content: center;
     margin-bottom: 0;
     z-index: 1;
+
+    @media (max-width: 1023px) {
+        margin-left: -32px;
+        float: left;
+        width: 66vw;
+        /*height: 8.4rem;*/
+        height: calc(66vw * 0.5625);
+        display: flex;
+        background-size: cover !important;
+    }
 }
 
 .playButton {
@@ -94,7 +135,6 @@
     background: none;
     border-style: none;
     padding: 0;
-    z-index: 10000;
 }
 
 .buttonWrapper {
@@ -108,6 +148,18 @@
     z-index: 2;
     position: relative;
     margin-top: -48px;
+
+    @media (max-width: 1023px) {
+        width: 50%;
+        background: none;
+        display: inline-block;
+        position: absolute;
+        top: 48px;
+        font-size: 12px;
+        line-height: 18px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
 }
 
 /* Первая кнопка - слева */
@@ -120,4 +172,30 @@
 .block2:nth-child(4) .buttonWrapper {
     float: right;
     text-align: right;
+}
+
+/* Зеркальный сдвиг для второго блока на 1023px */
+@media (max-width: 1023px) {
+    .block2:nth-child(4) .thumbContainer {
+        margin-left: auto;
+        margin-right: -32px;
+        float: right;
+    }
+
+    .block2:nth-child(4) .buttonWrapper {
+        float: right;
+        text-align: right;
+    }
+
+    /* Исправление для первой кнопки "Тест-драйв" */
+    .block2:nth-child(3) .buttonWrapper {
+        right: 0;
+        padding-left: 25%;
+    }
+
+    /* Исправление для второй кнопки "Промо" */
+    .block2:nth-child(4) .buttonWrapper {
+        left: 0;
+        padding-right: 25%;
+    }
 }

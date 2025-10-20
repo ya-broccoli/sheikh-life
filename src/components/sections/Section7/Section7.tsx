@@ -67,7 +67,7 @@ export const Section7 = ({ onOpenAbout }: Props) => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className={s.container}>
                 <button className={s.applicationButton} onClick={onOpenAbout}>
                     <Image src={buttonIcon} className={s.buttonIcon} alt="button icon" width={16} height={16}/>
                     Подробнее о нас

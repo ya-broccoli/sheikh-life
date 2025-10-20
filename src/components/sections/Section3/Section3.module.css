@@ -3,6 +3,20 @@
     max-width: 1160px;
     margin: auto;
     padding: 100px 0;
+
+    @media (max-width: 1180px) {
+        max-width: 760px;
+    }
+
+    @media (max-width: 1023px) {
+        padding: 25px 0;
+    }
+}
+
+.servicesWrapper {
+    @media (max-width: 800px) {
+        padding: 0 20px;
+    }
 }
 
 .title {
@@ -10,6 +24,10 @@
     line-height: 55px;
     color: rgb(0, 0, 0);
     margin-bottom: 40px;
+
+    @media (max-width: 1023px) {
+        font-size: 24px;
+    }
 }
 
 .counter {
@@ -19,6 +37,15 @@
     position: absolute;
     left: 350px;
     top: 32px;
+
+    @media (max-width: 1180px) {
+        left: 350px;
+        top: -21px;
+    }
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .servicesList {
@@ -26,6 +53,10 @@
     display: grid;
     grid-template-columns: repeat(2, 560px);
     gap: 40px;
+
+    @media (max-width: 1180px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .servicesItem {
@@ -48,6 +79,15 @@
     user-select: none;
     background: linear-gradient(to right, rgb(225, 205, 182), rgb(185, 137, 91));
     background-clip: text;
+
+    @media (max-width: 1023px) {
+        font-size: 24px;
+    }
+
+    @media (max-width: 800px) {
+        font-size: 22px;
+        margin-left: 5px;
+    }
 }
 
 .serviceItemOne, .serviceItemTwo {
@@ -58,6 +98,10 @@
     align-items: center;
     padding: 0 50px;
     transition: all 0.4s ease;
+
+    @media (max-width: 800px) {
+        padding: 0 15px;
+    }
 }
 
 .serviceItemOne {

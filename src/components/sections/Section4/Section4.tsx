@@ -11,7 +11,7 @@ type Props = {
     onOpenForm: () => void
 }
 
-export const Section4 = ({ onOpenForm }: Props) => {
+export const Section4 = ({onOpenForm}: Props) => {
     const [firstVideoPlaying, setFirstVideoPlaying] = useState(false)
     const [secondVideoPlaying, setSecondVideoPlaying] = useState(false)
 
@@ -25,7 +25,7 @@ export const Section4 = ({ onOpenForm }: Props) => {
 
     return (
         <div className={s.section} id="scenario">
-            <div className={s.titleContainer}>
+            <div className={s.container}>
                 <p className={s.title}>
                     Один из сценариев
                     <br/>
@@ -57,7 +57,7 @@ export const Section4 = ({ onOpenForm }: Props) => {
                 <div className={s.block2}>
                     <div className={s.thumbContainer}>
                         <YouTubeVideo
-                            title={"Промо Sheikh's Life"}
+                            title={'Промо Sheikh\'s Life'}
                             videoId={'lKo7oF8xVLM'}
                             isPlaying={secondVideoPlaying}
                             onPlay={() => setSecondVideoPlaying(true)}
@@ -75,7 +75,7 @@ export const Section4 = ({ onOpenForm }: Props) => {
                 </div>
                 <div className={s.block1}></div>
             </div>
-            <div className={s.buttonContainer}>
+            <div className={s.container}>
                 <button className={s.applicationButton} onClick={onOpenForm}>
                     <Image src={buttonIcon} className={s.buttonIcon} alt="button icon" width={16} height={16}/>
                     Хотите также?

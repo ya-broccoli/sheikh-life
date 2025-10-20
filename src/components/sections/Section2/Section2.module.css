@@ -3,6 +3,20 @@
     max-width: 1160px;
     margin: auto;
     padding: 100px 0;
+
+    @media (max-width: 1180px) {
+        max-width: 760px;
+    }
+
+    @media (max-width: 1023px) {
+        padding: 25px 0;
+    }
+}
+
+.casesWrapper {
+    @media (max-width: 800px) {
+        padding: 0 20px;
+    }
 }
 
 .title {
@@ -11,6 +25,10 @@
     color: rgb(0, 0, 0);
     margin-bottom: 40px;
     font-family: Prata, Arial, sans-serif;
+
+    @media (max-width: 1180px) {
+        font-size: 24px;
+    }
 }
 
 .counter {
@@ -21,6 +39,10 @@
     right: 284px;
     top: 60px;
     z-index: -1;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .worksList {
@@ -28,6 +50,20 @@
     grid-template-columns: repeat(3, 1fr);
     list-style-type: none;
     gap: 40px;
+
+    @media (max-width: 1180px) {
+        grid-template-columns: repeat(2, 360px);
+        justify-content: center;
+    }
+
+    @media (max-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+    }
+
+    @media (max-width: 575px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 .worksItem {
@@ -45,6 +81,14 @@
 
     &:hover {
         filter: brightness(1);
+    }
+
+    @media (max-width: 800px) {
+        height: 60vw;
+    }
+
+    @media (max-width: 575px) {
+        height: 100vw;
     }
 }
 

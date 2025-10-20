@@ -22,12 +22,24 @@
     flex-direction: row;
     margin: 0 auto;
     flex: 0 1 auto;
+
+    @media (max-width: 1023px) {
+        max-width: 430px;
+        width: 100%;
+        padding: 0 32px;
+    }
 }
 
 .block {
     flex-basis: 33.33%;
     max-width: 33.33%;
     padding: 0 30px;
+
+    @media (max-width: 1023px) {
+        flex-basis: 90%;
+        max-width: 90%;
+        padding: 0 30px;
+    }
 }
 
 .title {

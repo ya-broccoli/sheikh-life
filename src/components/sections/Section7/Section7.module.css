@@ -1,6 +1,10 @@
 .section {
     position: relative;
     padding: 100px 0;
+
+    @media (max-width: 1023px) {
+        padding: 25px 0;
+    }
 }
 
 .container {
@@ -10,15 +14,34 @@
     flex: 0 1 auto;
     flex-wrap: wrap;
     flex-direction: row;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        padding: 0 32px;
+        margin: 0;
+        flex-direction: column;
+    }
 }
 
 .columns {
     display: flex;
+    position: relative;
+
+    @media (max-width: 1023px) {
+        flex-direction: column;
+    }
 }
 
 .title {
     font-size: 48px;
     line-height: 54px;
+
+    @media (max-width: 1023px) {
+        font-size: 24px;
+        line-height: 28px;
+        padding: 0;
+        margin-bottom: 48px;
+    }
 }
 
 .leftColumn {
@@ -28,18 +51,35 @@
     flex-direction: column;
     padding: 48px 30px;
     justify-content: space-between;
+
+    @media (max-width: 1023px) {
+        flex-basis: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
 }
 
 .rightColumn {
     flex-basis: 66.67%;
     max-width: 66.67%;
     padding: 0 30px;
+
+    @media (max-width: 1023px) {
+        flex-basis: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-top: 30px;
+    }
 }
 
 .tabsList {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+    }
 }
 
 .tab {
@@ -69,6 +109,23 @@
         border-right: 1px solid rgb(255, 212, 146);
         border-bottom: 1px solid rgb(255, 212, 146);
     }
+
+    @media (max-width: 1023px) {
+        font-size: 12px;
+    }
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        border: 1px solid transparent;
+        border-left: 1px solid rgb(255, 212, 146);
+        margin-bottom: 16px;
+        padding: 12px 15px;
+        position: relative;
+
+        &:after {
+            display: none !important;
+        }
+    }
 }
 
 .tab.active {
@@ -80,6 +137,11 @@
     &:after {
         display: block;
     }
+
+    @media (max-width: 1023px) {
+        border: 1px solid rgb(255, 212, 146);
+        width: 100%;
+    }
 }
 
 .tab:not(.active) {
@@ -90,26 +152,56 @@
     &:after {
         display: none;
     }
+
+    @media (max-width: 1023px) {
+        border: 1px solid transparent;
+        border-left: 1px solid rgb(255, 212, 146);
+    }
 }
 
-.tab:hover {
+.tab:not(.active):hover {
     border-top: 1px solid rgb(255, 212, 146);
     border-bottom: 1px solid rgb(255, 212, 146);
     border-left: 1px solid rgb(255, 212, 146);
-    transition: border-color 0.3s ease;
-
 
     &:after {
         display: block;
+    }
+
+    @media (max-width: 1023px) {
+        border: 1px solid rgb(255, 212, 146);
+        width: 70%;
     }
 }
 
 .tabContent {
     display: flex;
+
+    @media (max-width: 1023px) {
+        flex-direction: column;
+    }
 }
 
 .imageWrapper {
     padding: 0 30px;
+    flex-basis: 50%;
+    max-width: 50%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.founderImage {
+    width: 100%;
+    height: auto;
+    max-width: 314px;
+    object-fit: cover;
+
+    @media (max-width: 1023px) {
+        max-width: 165px;
+        position: absolute;
+        top: 56px;
+        right: -32px;
+    }
 }
 
 .description {
@@ -132,6 +224,20 @@
     margin-top: 118px;
 }
 
+.description,
+.descriptionA {
+    @media (max-width: 1023px) {
+        display: flex;
+        max-width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-size: 12px;
+        gap: 26px;
+        flex-basis: 100%;
+    }
+}
+
 .counter {
     color: rgb(232, 227, 218);
     font-size: 160px;
@@ -139,6 +245,10 @@
     position: absolute;
     top: 264px;
     left: -30px;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .socialLink {
@@ -181,15 +291,28 @@
     &:hover {
         background-color: #a49d8f;
     }
+
+    @media (max-width: 1023px) {
+        min-width: 100%;
+        font-size: 12px;
+        letter-spacing: 2px;
+        line-height: 18px;
+        padding: 11px 10px;
+        margin: 24px 0 24px 0;
+    }
 }
 
 .buttonIcon {
     flex-shrink: 0;
 }
 
-/* плавное переключение табов */
+/* плавное переключение табов - ИСПРАВЛЕНО ДЛЯ МОБИЛЬНОЙ ВЕРСИИ */
 .rightColumn > * {
     animation: fadeIn 0.5s ease-in-out;
+
+    @media (max-width: 1023px) {
+        animation: none;
+    }
 }
 
 @keyframes fadeIn {

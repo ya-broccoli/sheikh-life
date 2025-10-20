@@ -8,9 +8,9 @@
 
 html,
 body {
-  max-width: 100vw;
-  min-width: 320px;
-  overflow-x: hidden;
+  width: 100%;
+  min-width: 379px;
+  /*overflow-y: auto;*/
   font-family: Prata, serif;
   color: rgb(0, 0, 0);
   font-size: 16px;
@@ -26,6 +26,7 @@ body {
   color: black;
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.5;
+
 }
 
 body::before {

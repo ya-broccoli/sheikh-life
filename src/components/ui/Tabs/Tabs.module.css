@@ -47,4 +47,9 @@
       background: rgb(232, 227, 218);
     }
   }
+
+  @media (max-width: 1023px) {
+    font-size: 12px;
+    margin: 0 12px;
+  }
 }

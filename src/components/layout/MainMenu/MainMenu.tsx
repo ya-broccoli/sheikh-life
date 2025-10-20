@@ -17,9 +17,9 @@ export const MainMenu = ({isOpen, onClose}: Props) => {
 
     return (
         <div className={`${s.mainMenu} ${isOpen ? s.open : ''}`}>
-            <CloseButton onClick={onClose} />
+            <CloseButton onClick={onClose}/>
             <div className={s.container}>
-                <div className={s.block}>
+                <div className={s.navBlock}>
                     <ul className={s.navList}>
                         <li className={s.navItem}>
                             <a href="#" onClick={onClose}>Начало</a>
@@ -47,8 +47,8 @@ export const MainMenu = ({isOpen, onClose}: Props) => {
                         </li>
                     </ul>
                 </div>
-                <div className={s.block}></div>
-                <div className={s.block}>
+                <div className={s.blockEmpty}></div>
+                <div className={s.contactsBlock}>
                     <div>
                         <p className={s.heading1}>
                             <a href="https://web.archive.org/web/20230608130059/tel:+7 (499) 286 80 02">+7 (499) 286 80
@@ -57,7 +57,6 @@ export const MainMenu = ({isOpen, onClose}: Props) => {
                         </p>
                         <p className={s.heading2}>
                             <button className={s.callback}
-                                // onClick="shown('callback');"
                             >Перезвоните мне
                             </button>
                         </p>
@@ -73,27 +72,33 @@ export const MainMenu = ({isOpen, onClose}: Props) => {
                 </div>
             </div>
             <div className={s.container}>
-                <div className={s.block}>
-                    <button className={s.policy} type="button"
-                        // onClick="shown('agreement');"
-                    >Пользовательское соглашение
-                    </button>
-                </div>
-                <div className={s.block}></div>
-                <div className={s.block}>
+                <div className={s.socialBlock}>
+                    <div className={s.block}>
+                        <button className={s.policy} type="button"
+                        >
+                            Пользовательское соглашение
+                        </button>
+                    </div>
+                    <div className={s.blockEmpty}></div>
+
                     <div className={s.socialWrapper}>
                         <a href="#">
-                            <Image src={instargam} className={s.socialIcon} alt="instargam icon" width={20} height={20}/>
+                            <Image src={instargam} className={s.socialIcon} alt="instargam icon" width={20}
+                                   height={20}/>
                         </a>
                         <a href="#">
-                            <Image src={telegram} className={s.socialIcon} alt="telegram icon" width={20} height={20}/>
+                            <Image src={telegram} className={s.socialIcon} alt="telegram icon" width={20}
+                                   height={20}/>
                         </a>
                         <a href="#">
-                            <Image src={whatsApp} className={s.socialIcon} alt="whatsApp icon" width={20} height={20}/>
+                            <Image src={whatsApp} className={s.socialIcon} alt="whatsApp icon" width={20}
+                                   height={20}/>
                         </a>
                     </div>
 
+
                 </div>
+
             </div>
         </div>
     )

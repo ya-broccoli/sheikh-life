@@ -5,6 +5,10 @@
     background-repeat: repeat;
     background-size: 220px 150px;
     color: #fff;
+
+    @media (max-width: 1023px) {
+        padding: 25px 0;
+    }
 }
 
 .container {
@@ -14,6 +18,13 @@
     flex: 0 1 auto;
     flex-wrap: wrap;
     flex-direction: row;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        padding: 0 32px;
+        margin: 0;
+        flex-direction: column-reverse;
+    }
 }
 
 .imageBlock,
@@ -26,6 +37,12 @@
 .formBlock {
     display: flex;
     align-items: center;
+
+    @media (max-width: 1023px) {
+        display: flex;
+        max-width: 100%;
+        flex: 1 1;
+    }
 }
 
 .title {
@@ -33,6 +50,12 @@
     line-height: 54px;
     margin-bottom: 48px;
     width: 100%;
+
+    @media (max-width: 1023px) {
+        font-size: 26px;
+        line-height: 32px;
+        margin: 48px 0 32px;
+    }
 }
 
 .description {
@@ -41,6 +64,23 @@
     line-height: 28px;
     width: 100%;
     margin-bottom: 48px;
+
+    @media (max-width: 1023px) {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 32px;
+    }
+}
+
+.imageBlock {
+    position: relative;
+
+    @media (max-width: 1023px) {
+        display: flex;
+        max-width: 100%;
+        flex: 1 1;
+        justify-content: end;
+    }
 }
 
 .imageWrapper {
@@ -49,10 +89,29 @@
         border: 1px solid #fff;
         display: block;
         position: absolute;
-        left: 107px;
-        top: 160px;
+        left: 0;
+        top: 60px;
         width: calc(33vw - 60px);
-        height: calc(77% - 120px);
+        height: calc(100% - 120px);
+
+        @media (max-width: 1023px) {
+            content: "";
+            display: block;
+            width: 50%;
+            height: calc(100% - 32px);
+            border: 1px solid #fff;
+            position: absolute;
+            left: 16px;
+            top: 16px;
+        }
+    }
+    @media (max-width: 1023px) {
+        position: relative;
+        justify-content: flex-end;
+        overflow: visible;
+        display: flex;
+        max-width: 100%;
+        flex: 1 1;
     }
 }
 
@@ -60,6 +119,12 @@
     display: block;
     max-height: calc(100vh - 180px);
     margin-left: auto;
+
+    @media (max-width: 1023px) {
+        max-width: 206px;
+        height: auto;
+        object-fit: cover;
+    }
 }
 
 .counter {
@@ -67,8 +132,12 @@
     font-size: 160px;
     line-height: 160px;
     position: absolute;
-    left: 84px;
-    top: 344px;
+    left: -22px;
+    top: 240px;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .input {
@@ -87,6 +156,14 @@
     &::placeholder {
         color: rgb(232, 227, 218);
     }
+
+    @media (max-width: 1023px) {
+        height: 40px;
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 16px;
+        padding: 0 16px;
+    }
 }
 
 .agreementText {
@@ -94,6 +171,10 @@
     line-height: 20px;
     margin-bottom: 48px;
     width: 100%;
+
+    @media (max-width: 1023px) {
+        font-size: 12px;
+    }
 }
 
 .agreementLink {
@@ -123,5 +204,9 @@
     &:hover {
         color: rgb(0, 0, 0);
         background: rgb(255, 255, 255);
+    }
+
+    @media (max-width: 1023px) {
+        margin-bottom: 25px;
     }
 }

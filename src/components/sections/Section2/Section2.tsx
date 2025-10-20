@@ -18,7 +18,7 @@ export const Section2 = ({ onOpenCase }: Props) => {
 
     return (
         <div className={s.section} id="cases">
-            <div>
+            <div className={s.casesWrapper}>
                 <h2 className={s.title}>Кейсы</h2>
                 <span className={s.counter}>02</span>
                 <ul className={s.worksList}>

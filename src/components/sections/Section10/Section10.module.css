@@ -2,6 +2,11 @@
     position: relative;
     padding: 100px 0 0 0;
     background-color: #fff;
+
+    @media (max-width: 1023px) {
+        padding: 0 25px;
+
+    }
 }
 
 .container {
@@ -10,6 +15,12 @@
     flex-direction: row;
     width: calc(60px + 80vw);
     margin: 0 auto 50px auto;
+
+    @media (max-width: 1023px) {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 .wrapper {
@@ -20,6 +31,12 @@
     height: auto;
     background: url('/images/backImage10.jpg') 21% 50% no-repeat;
     background-size: contain;
+
+    @media (max-width: 1023px) {
+        flex-direction: column-reverse;
+        padding-bottom: 48px;
+        background: none;
+    }
 }
 
 .column1 {
@@ -31,6 +48,11 @@
     flex: 0 0 24.5%;
     padding: 80px 0;
     background-color: transparent;
+
+    @media (max-width: 1023px) {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .addressWrapper {
@@ -41,12 +63,26 @@
     background-size: 220px 150px;
     color: white;
     padding: 30px 20px;
+
+    @media (max-width: 1023px) {
+        background-image: none;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
 }
 
 .title {
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 56px;
+
+    @media (max-width: 1023px) {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 24px;
+    }
 }
 
 .map {
@@ -79,6 +115,10 @@
     font-size: 13px;
     line-height: 20px;
     margin-bottom: 30px;
+
+    @media (max-width: 1023px) {
+        font-size: 12px;
+    }
 }
 
 .column2 {
@@ -88,23 +128,54 @@
     border-color: rgb(255, 255, 255);
     border-image: initial;
     flex: 0 0 16.2%;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .column3 {
     color: rgb(255, 255, 255);
     flex: 0 0 calc(59.3% - 120px);
     padding: 60px;
-}
-
-.column3 {
     background-image: url('/images/pattern.jpg');
     background-repeat: repeat;
     background-size: 220px 150px;
 }
 
+.imageWrapper {
+    display: none;
+
+    @media (max-width: 1023px) {
+        display: block;
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9; /* или другое соотношение */
+        margin: 0 0 -32px;
+    }
+}
+
+.imageBack {
+    @media (max-width: 1023px) {
+        position: absolute;
+        right: -30px;
+        top: 50px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+}
+
 .form {
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1023px) {
+        color: rgb(255, 255, 255);
+        margin-left: -24px;
+        width: calc(100% + 48px);
+    }
 }
 
 .formTitle {
@@ -127,7 +198,21 @@
     outline: none;
 
     &::placeholder {
-    color: rgb(232, 227, 218);
+        color: rgb(232, 227, 218);
+    }
+
+    @media (max-width: 1023px) {
+        height: 40px;
+        width: 100%;
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 16px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(255, 255, 255);
+        border-image: initial;
+        padding: 0 16px;
+        background: none;
     }
 }
 
@@ -136,6 +221,11 @@
     line-height: 20px;
     margin-bottom: 48px;
     width: 100%;
+
+    @media (max-width: 1023px) {
+        font-size: 12px;
+        line-height: 18px;
+    }
 }
 
 .agreementLink {
@@ -179,11 +269,65 @@
     grid-template-columns: minmax(200px, 300px) 1fr 1fr 1fr 1fr;
     width: calc(60px + 80vw);
     margin: 0 auto 50px auto;
+
+    @media (max-width: 1023px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "contact1 contact2"
+            "contact3 contact4"
+            "copyright copyright";
+        row-gap: 40px;
+        column-gap: 20px;
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Распределяем элементы по grid-areas */
+.footerWrapper > *:nth-child(3) {
+    @media (max-width: 1023px) {
+        grid-area: contact1;
+    }
+}
+
+.footerWrapper > *:nth-child(2) {
+    @media (max-width: 1023px) {
+        grid-area: contact2;
+    }
+}
+
+.footerWrapper > *:nth-child(4) {
+    @media (max-width: 1023px) {
+        grid-area: contact3;
+    }
+}
+
+.footerWrapper > *:nth-child(5) {
+    @media (max-width: 1023px) {
+        grid-area: contact4;
+    }
+}
+
+.footerWrapper > *:nth-child(1) {
+    @media (max-width: 1023px) {
+        grid-area: copyright;
+    }
 }
 
 .copywrite {
     display: flex;
     margin-bottom: 20px;
+
+    @media (max-width: 1023px) {
+        grid-area: copyright;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
 }
 
 .callback,
@@ -206,6 +350,11 @@
     display: inline-block;
     margin-top: 20px;
     padding: 0;
+
+    @media (max-width: 1023px) {
+        margin-top: 10px;
+        font-size: 12px;
+    }
 }
 
 .mailLink {
@@ -218,6 +367,11 @@
     background: none;
     padding: 0;
     border-bottom: 1px solid rgb(232, 227, 218);
+
+    @media (max-width: 1023px) {
+        margin-top: 10px;
+        font-size: 12px;
+    }
 }
 
 .phoneLink,
@@ -227,9 +381,51 @@
     &:hover {
         color: rgb(164, 157, 143);
     }
+
+    @media (max-width: 1180px) {
+        font-size: 13px;
+    }
+
+    @media (max-width: 1023px) {
+        font-size: 12px;
+    }
 }
 
 .image {
     width: 50px;
     margin-right: 16px;
+}
+
+/* Дополнительные мобильные стили */
+@media (max-width: 1023px) {
+    .footer {
+        height: auto;
+        padding: 0;
+    }
+
+    .footerWrapper > * {
+        text-align: center;
+    }
+}
+
+.contacts {
+    & p {
+        @media (max-width: 1023px) {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: 1023px) {
+        text-align: left;
+        justify-self: start;
+        align-items: flex-start;
+    }
+}
+
+.copywrite {
+    @media (max-width: 1023px) {
+        justify-content: flex-start;
+        text-align: left;
+        margin-bottom: 15px;
+    }
 }

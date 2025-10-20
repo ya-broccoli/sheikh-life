@@ -1,6 +1,10 @@
 .section {
     position: relative;
     padding: 100px 0;
+
+    @media (max-width: 1023px) {
+        padding: 25px 0;
+    }
 }
 
 .container {
@@ -9,6 +13,19 @@
     flex-wrap: nowrap;
     flex-direction: row;
     margin: 0 auto;
+
+    @media (max-width: 1180px) {
+        width: 100%;
+        padding: 0 32px;
+        margin: 0;
+    }
+}
+
+.section .container:nth-child(2) {
+    @media (max-width: 1023px) {
+        flex-direction: column;
+        gap: 16px;
+    }
 }
 
 .title {
@@ -20,6 +37,13 @@
     flex-basis: 66.67%;
     max-width: 66.67%;
     padding: 0 30px;
+
+    @media (max-width: 1023px) {
+        margin: 48px 0 32px 0;
+        font-size: 24px;
+        line-height: 28px;
+        padding: 0;
+    }
 }
 
 .applicationButton {
@@ -43,6 +67,15 @@
     &:hover {
         background-color: #a49d8f;
     }
+
+    @media (max-width: 1023px) {
+        min-width: 100%;
+        font-size: 12px;
+        letter-spacing: 2px;
+        line-height: 18px;
+        padding: 11px 10px;
+        margin: 24px 0 24px 0;
+    }
 }
 
 .buttonIcon {
@@ -57,19 +90,57 @@
     max-width: 33.33%;
     padding: 0 30px;
     text-align: right;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
 }
 
 .instructionsItem {
     padding: 0 30px;
     flex-basis: 16.67%;
     max-width: 16.67%;
+
+    @media (max-width: 1023px) {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        flex: 1;
+        align-items: center;
+        padding: 0;
+
+        & p {
+            font-size: 12px;
+            line-height: 18px;
+
+            & br {
+                display: none;
+            }
+        }
+    }
 }
 
 .imageContainer {
     display: flex;
     margin-bottom: 24px;
+
+    @media (max-width: 1023px) {
+        margin: 0;
+    }
 }
 
 .arrow {
     margin-left: auto;
+
+    @media (max-width: 1023px) {
+        display: none;
+    }
+}
+
+.image {
+    @media (max-width: 1023px) {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
 }

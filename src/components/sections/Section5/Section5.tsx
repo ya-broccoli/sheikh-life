@@ -14,11 +14,11 @@ type Props = {
     onOpenForm: () => void
 }
 
-export const Section5 = ({ onOpenForm }: Props) => {
+export const Section5 = ({onOpenForm}: Props) => {
     return (
         <div className={s.section} id="howto">
             <div className={s.container}>
-                <p className={s.title}>Как стать шейхом? <br /> Подробная инструкция</p>
+                <p className={s.title}>Как стать шейхом? <br/> Подробная инструкция</p>
                 <p className={s.counter}>05</p>
             </div>
             <div className={s.container}>

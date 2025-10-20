@@ -2,6 +2,7 @@ import * as React from 'react';
 import s from '@/components/sections/Section10/Section10.module.css';
 import logo from '@/assets/images/svg/logo.svg';
 import Image from 'next/image';
+import image10 from '@/assets/images/content/image10.jpg'
 
 type Props = {
     onOpenUserAgreement: () => void
@@ -12,6 +13,9 @@ export const Section10 = ({onOpenUserAgreement}: Props) => {
     return (
         <div className={s.section}>
             <div className={s.container}>
+                <div className={s.imageWrapper}>
+                    <Image src={image10} alt={''} width={418} height={276} className={s.imageBack}/>
+                </div>
                 <div className={s.wrapper}>
                     <div className={s.column1}>
                         <div className={s.addressWrapper}>
@@ -32,7 +36,6 @@ export const Section10 = ({onOpenUserAgreement}: Props) => {
                                 </a>
                             </p>
                         </div>
-
                     </div>
                     <div className={s.column2}></div>
                     <div className={s.column3}>
