@@ -3,12 +3,27 @@ import s from '@/components/sections/Section10/Section10.module.css';
 import logo from '@/assets/images/svg/logo.svg';
 import Image from 'next/image';
 import image10 from '@/assets/images/content/image10.jpg'
+import pattern from '@/assets/images/backgrounds/pattern.jpg';
+import {useEffect, useState} from 'react';
 
 type Props = {
     onOpenUserAgreement: () => void
 }
 
 export const Section10 = ({onOpenUserAgreement}: Props) => {
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
 
     return (
         <div className={s.section}>
@@ -18,7 +33,12 @@ export const Section10 = ({onOpenUserAgreement}: Props) => {
                 </div>
                 <div className={s.wrapper}>
                     <div className={s.column1}>
-                        <div className={s.addressWrapper}>
+                        <div
+                            className={s.addressWrapper}
+                            style={{
+                                backgroundImage: !isMobile ? `url(${pattern.src})` : 'none'
+                            }}
+                        >
                             <p className={s.title}>Наш офис в Дубаи:</p>
                             <p className={s.address}>
                                 Офис 801C, арка Ибн Баттута,
@@ -38,7 +58,10 @@ export const Section10 = ({onOpenUserAgreement}: Props) => {
                         </div>
                     </div>
                     <div className={s.column2}></div>
-                    <div className={s.column3}>
+                    <div
+                        className={s.column3}
+                        style={{ backgroundImage: `url(${pattern.src})` }}
+                    >
                         <form
                             action="https://formspree.io/f/твой-код"
                             method="POST"

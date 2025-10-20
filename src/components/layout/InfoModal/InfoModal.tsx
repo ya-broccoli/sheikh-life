@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react';
 import s from './InfoModal.module.css'
 import {CloseButton} from '@/components/ui/Button/CloseButton/CloseButton';
@@ -7,6 +5,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import {Navigation} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import {useState} from 'react';
 
 type Props = {
     isOpen: boolean
@@ -21,7 +20,7 @@ type CaseProps = {
 }
 
 export const InfoModal = ({ isOpen, onClose, slides, initialSlide = 0, onOpenForm }: Props) => {
-    const [activeIndex, setActiveIndex] = React.useState(initialSlide)
+    const [activeIndex, setActiveIndex] = useState(initialSlide)
 
     // Функция для клонирования контента с добавлением колбэка
     const slidesWithFormCallback = slides.map(slide => ({

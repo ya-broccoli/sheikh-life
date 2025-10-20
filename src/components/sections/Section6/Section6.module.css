@@ -1,7 +1,6 @@
 .section {
     position: relative;
     padding: 100px 0;
-    background-image: url('/images/pattern.jpg');
     background-repeat: repeat;
     background-size: 220px 150px;
     color: #fff;

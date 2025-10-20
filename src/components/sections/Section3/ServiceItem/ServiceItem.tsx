@@ -1,12 +1,10 @@
-'use client'
-
-import Image from 'next/image';
+import Image, {StaticImageData} from 'next/image';
 import {useState} from 'react';
 import s from '../Section3.module.css'
 
 type Props = {
     id: number
-    image: any
+    image: StaticImageData
     title: string
     description: string
     onOpenService: (serviceId: number) => void

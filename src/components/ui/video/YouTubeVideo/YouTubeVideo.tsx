@@ -1,5 +1,3 @@
-'use client'
-
 import {useState} from 'react'
 import s from './YouTubeVideo.module.css'
 import {YouTubePlayButton} from '@/components/ui/Button/YouTubeButton/YouTubeButton';

@@ -1,7 +1,10 @@
 import {Prata} from 'next/font/google';
+import type { Metadata } from 'next';
 import './globals.css';
-import {ReactNode} from 'react';
+import {CSSProperties, ReactNode} from 'react';
 import {FloatingModals} from '@/components/layout/FloatingModals/FloatingModals';
+import backImage from '@/assets/images/backgrounds/backImage10.jpg';
+import patternImage from '@/assets/images/backgrounds/pattern.jpg';
 
 const prata = Prata({
     subsets: ['latin'],
@@ -9,10 +12,9 @@ const prata = Prata({
     display: 'swap',
 });
 
-export const metadata = {
+export const metadata: Metadata = {
     title: 'Sheikhs Life',
     description: 'The official website of Sheikh',
-    charset: 'UTF-8',
 }
 
 export const viewport = {
@@ -26,7 +28,13 @@ export default function RootLayout({children}: {
 
     return (
         <html lang="ru">
-            <body className={prata.className}>
+            <body
+                className={prata.className}
+                style={{
+                    '--back-image': `url(${backImage})`,
+                    '--pattern-image': `url(${patternImage})`,
+                } as CSSProperties}
+            >
                 <FloatingModals/>
                 {children}
             </body>

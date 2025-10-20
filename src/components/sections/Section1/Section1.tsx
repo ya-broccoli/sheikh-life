@@ -1,9 +1,7 @@
-'use client'
-
 import * as React from 'react';
 import {useState} from 'react';
 import s from './Section1.module.css'
-import common from '@/app/styles/common.module.css'
+import backImage from '@/assets/images/backgrounds/backImage.jpg'
 import Image from 'next/image'
 import logo from '@/assets/images/svg/logo.svg'
 import logoText from '@/assets/images/svg/logo_text.svg'
@@ -79,7 +77,10 @@ export const Section1 = ({onOpenForm}: Props) => {
                     </div>
                 </div>
             </div>
-            <div className={s.containerBanner}>
+            <div
+                className={s.containerBanner}
+                style={{ backgroundImage: `url(${backImage.src})` }}
+            >
                 <div className={s.banner}>
                     <div className={s.heroDescription}>
                         <h1 className={s.title}>

@@ -1,3 +1,8 @@
+:root {
+  --back-image: url('/images/backgrounds/backImage10.jpg');
+  --pattern-image: url('/images/backgrounds/pattern.jpg');
+}
+
 *,
 *::before,
 *::after {

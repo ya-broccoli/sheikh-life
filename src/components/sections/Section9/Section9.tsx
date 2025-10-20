@@ -7,12 +7,16 @@ import item3 from '@/assets/images/svg/reasons/item3.svg'
 import item4 from '@/assets/images/svg/reasons/item4.svg'
 import item5 from '@/assets/images/svg/reasons/item5.svg'
 import item6 from '@/assets/images/svg/reasons/item6.svg'
+import pattern from '@/assets/images/backgrounds/pattern.jpg';
 
 export const Section9 = () => {
     return (
-        <div className={s.section} id="why">
+        <div
+            className={s.section} id="why"
+            style={{ backgroundImage: `url(${pattern.src})` }}
+        >
             <div className={s.container}>
-                <p className={s.title}>Почему выбирают Sheikh's Life?</p>
+                <p className={s.title}>Почему выбирают Sheikh&apos;s Life?</p>
                 <span className={s.counter}>09</span>
                 <div className={s.reasonsContainer}>
                     <div className={s.reason}>

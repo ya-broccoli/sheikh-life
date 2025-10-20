@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react';
 import s from '@/components/sections/Section3/Section3.module.css';
 import item1 from '@/assets/images/svg/services/item1.svg';

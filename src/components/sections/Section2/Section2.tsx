@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react';
 import s from './Section2.module.css'
 import Image from 'next/image'

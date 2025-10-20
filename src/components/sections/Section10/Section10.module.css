@@ -29,7 +29,7 @@
     padding-top: 60px;
     padding-bottom: 60px;
     height: auto;
-    background: url('/images/backImage10.jpg') 21% 50% no-repeat;
+    background: var(--back-image) 21% 50% no-repeat;
     background-size: contain;
 
     @media (max-width: 1023px) {
@@ -58,7 +58,6 @@
 .addressWrapper {
     height: fit-content;
     margin-top: auto;
-    background-image: url('/images/pattern.jpg');
     background-repeat: repeat;
     background-size: 220px 150px;
     color: white;
@@ -66,6 +65,7 @@
 
     @media (max-width: 1023px) {
         background-image: none;
+        background-color: transparent;
         color: #000;
         display: flex;
         flex-direction: column;
@@ -138,9 +138,12 @@
     color: rgb(255, 255, 255);
     flex: 0 0 calc(59.3% - 120px);
     padding: 60px;
-    background-image: url('/images/pattern.jpg');
     background-repeat: repeat;
     background-size: 220px 150px;
+
+    /*@media (max-width: 1023px) {*/
+    /*    background-image: none;*/
+    /*}*/
 }
 
 .imageWrapper {

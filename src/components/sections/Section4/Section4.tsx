@@ -1,5 +1,3 @@
-'use client'
-
 import * as React from 'react';
 import s from './Section4.module.css'
 import buttonIcon from '@/assets/images/svg/buttonIcon.svg';

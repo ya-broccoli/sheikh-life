@@ -1,7 +1,8 @@
 import * as React from 'react';
 import s from '@/components/sections/Section6/Section6.module.css';
 import Image from 'next/image';
-import backImage06 from '../../../../public/images/backImage06.jpg';
+import backImage06 from '@/assets/images/backgrounds/backImage06.jpg'
+import pattern from '@/assets/images/backgrounds/pattern.jpg';
 
 type Props = {
     onOpenUserAgreement: () => void
@@ -9,7 +10,10 @@ type Props = {
 
 export const Section6 = ({ onOpenUserAgreement }: Props) => {
     return (
-        <div className={s.section}>
+        <div
+            className={s.section}
+            style={{ backgroundImage: `url(${pattern.src})` }}
+        >
             <div className={s.container}>
                 <div className={s.imageBlock}>
                     <span className={s.counter}>06</span>

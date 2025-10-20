@@ -117,13 +117,14 @@
 
 .containerBanner {
     height: 56vh;
-    background: url('/images/backImage.jpg') center no-repeat;
+    background-position: center;
+    background-repeat:  no-repeat;
     background-size: cover;
 
     @media (max-width: 1023px) {
         height: 45.6vh;
         padding-top: 32px;
-        background: url('/images/backImage.jpg') 35% 50% no-repeat;
+        background-position: 35% 50%;
         background-size: cover;
     }
 }
