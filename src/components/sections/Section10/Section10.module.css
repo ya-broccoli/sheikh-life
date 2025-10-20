@@ -29,7 +29,6 @@
     padding-top: 60px;
     padding-bottom: 60px;
     height: auto;
-    background: var(--back-image) 21% 50% no-repeat;
     background-size: contain;
 
     @media (max-width: 1023px) {
@@ -140,10 +139,6 @@
     padding: 60px;
     background-repeat: repeat;
     background-size: 220px 150px;
-
-    /*@media (max-width: 1023px) {*/
-    /*    background-image: none;*/
-    /*}*/
 }
 
 .imageWrapper {
@@ -153,7 +148,7 @@
         display: block;
         position: relative;
         width: 100%;
-        aspect-ratio: 16/9; /* или другое соотношение */
+        aspect-ratio: 16/9;
         margin: 0 0 -32px;
     }
 }

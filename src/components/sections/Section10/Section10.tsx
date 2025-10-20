@@ -31,7 +31,12 @@ export const Section10 = ({onOpenUserAgreement}: Props) => {
                 <div className={s.imageWrapper}>
                     <Image src={image10} alt={''} width={418} height={276} className={s.imageBack}/>
                 </div>
-                <div className={s.wrapper}>
+                <div
+                    className={s.wrapper}
+                    style={{
+                        background: !isMobile ? `url(${image10.src}) 21% 50% / contain no-repeat` : 'none'
+                    }}
+                >
                     <div className={s.column1}>
                         <div
                             className={s.addressWrapper}
