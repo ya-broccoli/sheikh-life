@@ -18,8 +18,13 @@ import {servicesData} from '@/data/servicesData';
 import {casesData} from '@/data/casesData';
 import {About} from '@/components/layout/About/About';
 import {UserAgreement} from '@/components/layout/UserAgreement/UserAgreement';
+import {useParams} from 'next/navigation';
 
 export default function Page() {
+
+    const params = useParams()
+    const lang = params.lang as string
+
     const [isFormOpen, setIsFormOpen] = useState(false)
     const [isAboutOpen, setAboutOpen] = useState(false)
     const [isUserAgreementOpen, setUserAgreementOpen] = useState(false)
@@ -46,7 +51,7 @@ export default function Page() {
     return (
         <div className={s.page}>
             <main className={s.main}>
-                <Section1 onOpenForm={() => setIsFormOpen(true)} />
+                <Section1 onOpenForm={() => setIsFormOpen(true)} lang={lang} />
                 <Section2 onOpenCase={(initialSlide) => setActiveModal({ type: 'case', initialSlide })} />
                 <Section3 onOpenService={(serviceId) => setActiveModal({ type: 'service', initialSlide: findServiceIndex(serviceId) })} />
                 <Section4 onOpenForm={() => setIsFormOpen(true)} />

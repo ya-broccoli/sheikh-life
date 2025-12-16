@@ -25,7 +25,7 @@ export const ServiceItem = ({ id, image, title, description, onOpenService }: Pr
         >
             {/* Лицевая сторона */}
             <div className={`${s.serviceItemOne} ${isFlipped ? s.hidden : s.visible}`}>
-                <Image src={image} alt='' width={70} height={66} className={s.image}/>
+                <Image src={image} alt='Service icon' width={70} height={70} className={s.image}/>
                 <h3 className={s.serviceTitle}>{title}</h3>
             </div>
 

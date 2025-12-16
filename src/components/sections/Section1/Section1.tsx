@@ -16,6 +16,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import {YouTubeVideo} from '@/components/ui/video/YouTubeVideo/YouTubeVideo';
+import enDict from '../../../dictionaries/en.json'
+import ruDict from '../../../dictionaries/ru.json'
+import {TextWithBreaks} from '@/components/sections/Section1/TextWithBreaks/TextWithBreaks';
 
 // Данные для слайдов
 const slides = [
@@ -41,10 +44,14 @@ const slides = [
 
 type Props = {
     onOpenForm: () => void
+    lang: string
 }
 
-export const Section1 = ({onOpenForm}: Props) => {
+export const Section1 = ({onOpenForm, lang}: Props) => {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false)
+
+    // Выбираем словарь по языку
+    const dict = lang === 'en' ? enDict : ruDict
 
     return (
         <div className={s.section}>
@@ -65,9 +72,9 @@ export const Section1 = ({onOpenForm}: Props) => {
                         <div className={s.logoText}>
                             <Image src={logoText} alt="Logo-text" width={150} height={20}/>
                         </div>
-                        <div className={s.languageSelect}>
-                            {/*<LanguageSelect/>*/}
-                        </div>
+                        {/*<div className={s.languageSelect}>*/}
+                        {/*    <LanguageSelect />*/}
+                        {/*</div>*/}
                     </div>
                     <div className={s.socials}>
                         <p className={s.heading1}>
@@ -84,13 +91,18 @@ export const Section1 = ({onOpenForm}: Props) => {
                 <div className={s.banner}>
                     <div className={s.heroDescription}>
                         <h1 className={s.title}>
-                            <span>Испытайте</span>
+                            <span>
+                                Испытайте
+                                {/*{dict.section1.title1}*/}
+                            </span>
                             <br/>
                             Жизнь шейха
+                            {/*{dict.section1.title2}*/}
                             <br/>
                             <br/>
                         </h1>
                         <p className={s.description}>
+                            {/*<TextWithBreaks lines={dict.section1.description} withLastBreak />*/}
                             Мы создали уникальную<br/>
                             программу путешествий<br/>
                             где вы сможете жить как<br/>
@@ -106,7 +118,7 @@ export const Section1 = ({onOpenForm}: Props) => {
                             <div className={s.video}>
                                 <YouTubeVideo
                                     videoId={'b0tAE8P2Tb4'}
-                                    title="Как отдыхает Шейх?"
+                                    title={dict.section1.videoTitle}
                                     isPlaying={isVideoPlaying}
                                     onPlay={() => setIsVideoPlaying(true)}
                                 />
@@ -123,10 +135,7 @@ export const Section1 = ({onOpenForm}: Props) => {
             </div>
             <div className={s.containerFooter}>
                 <p className={s.footerDescription}>
-                    Мы создали уникальную<br/>
-                    программу путешествий,<br/>
-                    где вы сможете жить как<br/>
-                    Шейх в статусе инкогнито.
+                    <TextWithBreaks lines={dict.section1.description} />
                 </p>
                 <div className={s.application}>
                     <button className={s.applicationButton} onClick={onOpenForm}>

@@ -1,0 +1,33 @@
+{
+  "section1": {
+    "title1": "Experience",
+    "title2": "the life of a sheikh",
+    "description": [
+      "We have created a unique",
+      "travel programme",
+      "where you can live like",
+      "a sheikh incognito"
+    ],
+    "videoTitle": "How does the Sheikh relax?",
+    "button": "Оставить заявку"
+  },
+  "section2": {
+    "title": "Наши кейсы",
+    "button": "Смотреть все"
+  },
+  "modal": {
+    "services": {
+      "title": "Услуги",
+      "close": "Закрыть"
+    },
+    "cases": {
+      "title": "Кейсы",
+      "description": "Наши работы"
+    }
+  },
+  "common": {
+    "phone": "Телефон",
+    "whatsapp": "WhatsApp",
+    "submit": "Отправить"
+  }
+}
